@@ -12,8 +12,8 @@
           <th width="10%">Address</th>
           <th width="10%">Contact No.</th>
           <th width="10%">email</th>
-          <th width="10%">Total</th>
-          <th width="150">Description</th>
+          <th width="10%">Description</th>
+          <th width="15%">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -139,60 +139,59 @@ export default {
       items: [
         {
           id: "1010",
-          name: "Mr.",
-          father: "John",
+          name: "John",
+          father: "Jack",
           mother: "Lily",
-          address: "edinburgh",
+          address: "edburgh",
           phone: "01727772300",
           email: "rbm@gmail.com"
         },
         {
           id: "1010",
-          name: "Mr.",
-          father: "John",
-          mother: "Lily",
-          address: "edinburgh",
-          phone: "01727772300",
-          email: "rbm@gmail.com"
+          name: "Michael",
+          father: "Cane",
+          mother: "Susan",
+          address: "Bristol",
+          phone: "01727772340",
+          email: "rbq@gmail.com"
         },
         {
           id: "1010",
-          name: "Mr.",
-          father: "John",
-          mother: "Lily",
-          address: "edinburgh",
-          phone: "01727772300",
-          email: "rbm@gmail.com"
+          name: "Morris",
+          father: "James",
+          mother: "Natasha",
+          address: "Asgard",
+          phone: "01727772450",
+          email: "rbsgm@gmail.com"
         },
         {
           id: "1010",
-          name: "Mr.",
-          father: "John",
-          mother: "Lily",
-          address: "edinburgh",
+          name: "Malfoy",
+          father: "Sam",
+          mother: "Mave",
+          address: "Alabama",
           phone: "01727772300",
-          email: "rbm@gmail.com"
+          email: "berm@gmail.com"
         },
         {
           id: "1010",
-          name: "Mr.",
-          father: "John",
-          mother: "Lily",
-          address: "edinburgh",
-          phone: "01727772300",
-          email: "rbm@gmail.com"
+          name: "Monty",
+          father: "Anderson",
+          mother: "Ammy",
+          address: "south",
+          phone: "01725552300",
+          email: "rb44@gmail.com"
         },
         {
           id: "1010",
-          name: "Mr.",
-          father: "John",
-          mother: "Lily",
-          address: "edinburgh",
+          name: "Neymar",
+          father: "John Jr.",
+          mother: "Leya",
+          address: "pitsburgh",
           phone: "01727772300",
-          email: "rbm@gmail.com"
+          email: "rbmqq@gmail.com"
         }
       ],
-      tax: 10
     };
   },
 
