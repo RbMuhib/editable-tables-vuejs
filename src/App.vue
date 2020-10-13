@@ -13,7 +13,7 @@
           <th width="10%">Contact No.</th>
           <th width="10%">email</th>
           <th width="10%">Description</th>
-          <th width="15%">Action</th>
+          <th width="300%">Action</th>
         </tr>
       </thead>
       <tbody>
