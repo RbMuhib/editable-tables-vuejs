@@ -5,13 +5,15 @@
       <thead class="thead-light">
         <tr>
           <th width="1">#</th>
-          <th width="10%">Remitter ID</th>
+          <th width="10%" type="">Remitter ID</th>
           <th width="10%">Name</th>
           <th width="10%">Father's Name</th>
           <th width="10%">Mother's Name</th>
           <th width="10%">Address</th>
+          <th width="10%">PostalCode#</th>
+          <th width="10%">Birthday</th>
           <th width="10%">Contact No.</th>
-          <th width="10%">email</th>
+          <th width="10%" >Email</th>
           <th width="10%">Description</th>
           <th width="300%">Action</th>
         </tr>
@@ -22,7 +24,7 @@
           <td>
             <span v-if="editIndex !== index">{{ item.id }}</span>
             <span v-if="editIndex === index">
-              <input class="form-control form-control-sm" v-model="item.id" />
+              <input class="form-control form-control-sm" v-model="item.id" type="number"/>
             </span>
           </td>
           <td>
@@ -34,25 +36,37 @@
           <td>
             <span v-if="editIndex !== index">{{ item.father }}</span>
             <span v-if="editIndex === index">
-              <input
-                class="form-control form-control-sm"
-                v-model="item.father"
-              />
+              <input class="form-control form-control-sm" v-model="item.father" />
             </span>
           </td>
           <td>
             <span v-if="editIndex !== index">{{ item.mother }}</span>
             <span v-if="editIndex === index">
-              <input
-                class="form-control form-control-sm"
-                v-model.number="item.mother"
-              />
+              <input class="form-control form-control-sm" v-model="item.mother" />
             </span>
           </td>
           <td>
             <span v-if="editIndex !== index">{{ item.address }}</span>
             <span v-if="editIndex === index">
-              <input class="form-control form-control-sm" v-model="item.address" />
+              <input
+                class="form-control form-control-sm"
+                v-model="item.address"
+              />
+            </span>
+          </td>
+          <td>
+            <span v-if="editIndex !== index">{{ item.postalcode }}</span>
+            <span v-if="editIndex === index">
+              <input
+                class="form-control form-control-sm"
+                v-model.number="item.postalcode" type="number"
+              />
+            </span>
+          </td>
+          <td>
+            <span v-if="editIndex !== index">{{ item.birthday }}</span>
+            <span v-if="editIndex === index">
+              <input class="form-control form-control-sm" v-model="item.birthday" type="date" />
             </span>
           </td>
           <td>
@@ -60,7 +74,7 @@
             <span v-if="editIndex === index">
               <input
                 class="form-control form-control-sm"
-                v-model.number="item.phone"
+                v-model.number="item.phone" type="number"
               />
             </span>
           </td>
@@ -69,7 +83,7 @@
             <span v-if="editIndex === index">
               <input
                 class="form-control form-control-sm"
-                v-model.number="item.email"
+                v-model.number="item.email" type="email"
               />
             </span>
           </td>
@@ -80,26 +94,26 @@
             <span v-if="editIndex !== index">
               <button
                 @click="edit(item, index)"
-                class="btn btn-raised btn-success mr-2"
+                class="btn btn-raised btn-success "
               >
                 Edit
               </button>
               <button
                 @click="remove(item, index)"
-                class="btn btn-raised btn-success mr-2"
+                class="btn btn-raised btn-success"
               >
                 Remove
               </button>
             </span>
             <span v-else>
               <button
-                class="btn btn-raised btn-success mr-2"
+                class="btn btn-raised btn-secondary"
                 @click="cancel(item)"
               >
                 Cancel
               </button>
               <button
-                class="btn btn-raised btn-success mr-2"
+                class="btn btn-raised btn-success"
                 @click="save(item)"
               >
                 Save
@@ -111,8 +125,9 @@
     </table>
 
     <div class="col-3 offset-9 text-right my-3">
-      <button v-show="!editIndex" @click="add" class="btn btn-raised btn-success">
-        Add item
+      <button v-show="!editIndex" @click="add" class="btn btn-raised btn-success btn-lg" 
+      >
+        Add Remitter
       </button>
     </div>
 
@@ -143,6 +158,8 @@ export default {
           father: "Jack",
           mother: "Lily",
           address: "edburgh",
+          postalcode: "1209",
+          birthday: "12/03/1980",
           phone: "01727772300",
           email: "rbm@gmail.com"
         },
@@ -152,6 +169,8 @@ export default {
           father: "Cane",
           mother: "Susan",
           address: "Bristol",
+          postalcode: "1209",
+          birthday: "12/03/1980",
           phone: "01727772340",
           email: "rbq@gmail.com"
         },
@@ -161,6 +180,8 @@ export default {
           father: "James",
           mother: "Natasha",
           address: "Asgard",
+          postalcode: "1209",
+          birthday: "12/03/1980",
           phone: "01727772450",
           email: "rbsgm@gmail.com"
         },
@@ -170,6 +191,8 @@ export default {
           father: "Sam",
           mother: "Mave",
           address: "Alabama",
+          postalcode: "1209",
+          birthday: "12/03/1980",
           phone: "01727772300",
           email: "berm@gmail.com"
         },
@@ -179,6 +202,8 @@ export default {
           father: "Anderson",
           mother: "Ammy",
           address: "south",
+          postalcode: "1209",
+          birthday: "12/03/1980",
           phone: "01725552300",
           email: "rb44@gmail.com"
         },
@@ -188,6 +213,8 @@ export default {
           father: "John Jr.",
           mother: "Leya",
           address: "pitsburgh",
+          postalcode: "1209",
+          birthday: "12/03/1980",
           phone: "01727772300",
           email: "rbmqq@gmail.com"
         }
@@ -204,6 +231,8 @@ export default {
         father: "",
         mother: "",
         address: "",
+        postalcode: "",
+        birthday: "",
         phone: "",
         email: ""
       });
