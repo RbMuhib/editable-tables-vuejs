@@ -2,7 +2,7 @@
 <div
 class="container mt-4"
 >
-  <h4>Editable Table</h4>
+  <h4><strong>Editable Table</strong></h4>
     <table
     class="table table-striped"
     >
@@ -34,10 +34,19 @@ class="container mt-4"
           width="10%">Birthday</th
           >
           <th
+          width="10%">Country</th
+          >
+          <th
           width="10%">Contact No.</th
           >
           <th
           width="10%" >Email</th
+          >
+          <th
+          width="10%" >Primary ID Type</th
+          >
+          <th
+          width="10%" >Secondary ID Type</th
           >
           <th
           width="300%">Action:Edit/Remove</th
@@ -145,6 +154,19 @@ class="container mt-4"
           </td>
           <td>
             <span
+            v-if="editIndex !== index">{{ item.country }}</span
+            >
+            <span
+            v-if="editIndex === index"
+            >
+              <input
+              class="form-control form-control-sm"
+              v-model="item.country"
+              />
+            </span>
+          </td>
+          <td>
+            <span
             v-if="editIndex !== index">{{ item.phone }}</span
             >
             <span
@@ -169,6 +191,34 @@ class="container mt-4"
                 class="form-control form-control-sm"
                 v-model.number="item.email" type="email"
               />
+            </span>
+          </td>
+          <td>
+            <span
+            v-if="editIndex !== index">{{ item.primaryid }}</span
+            >
+            <span
+            v-if="editIndex === index"
+            >
+              <select class="mdb-select md-form">
+  <option value="1">Passport</option>
+  <option value="2">National ID</option>
+  <option value="3">Birth Certificate</option>
+</select>
+            </span>
+          </td>
+          <td>
+            <span
+            v-if="editIndex !== index">{{ item.secondaryid }}</span
+            >
+            <span
+            v-if="editIndex === index"
+            >
+              <select class="mdb-select md-form">
+  <option value="1">Passport</option>
+  <option value="2">National ID</option>
+  <option value="3">Birth Certificate</option>
+</select>
             </span>
           </td>
           <td>
@@ -238,8 +288,11 @@ export default {
           address: 'edburgh',
           postalcode: '1209',
           birthday: '12/03/1980',
+          country: 'bangladesh',
           phone: '01727772300',
-          email: 'rbm@gmail.com'
+          email: 'rbm@gmail.com',
+          primaryid: 'Passport',
+          secondaryid: 'NID'
         },
         {
           id: '1010',
@@ -249,8 +302,12 @@ export default {
           address: 'edburgh',
           postalcode: '1209',
           birthday: '12/03/1980',
+          country: 'bangladesh',
           phone: '01727772300',
-          email: 'rbm@gmail.com'
+          email: 'rbm@gmail.com',
+          primaryid: 'Passport',
+          secondaryid: 'NID'
+          
         },
         {
           id: '1010',
@@ -260,8 +317,11 @@ export default {
           address: 'edburgh',
           postalcode: '1209',
           birthday: '12/03/1980',
+          country: 'bangladesh',
           phone: '01727772300',
-          email: 'rbm@gmail.com'
+          email: 'rbm@gmail.com',
+          primaryid: 'Passport',
+          secondaryid: 'NID'
         },
         {
           id: '1010',
@@ -271,8 +331,11 @@ export default {
           address: 'edburgh',
           postalcode: '1209',
           birthday: '12/03/1980',
+          country: 'bangladesh',
           phone: '01727772300',
-          email: 'rbm@gmail.com'
+          email: 'rbm@gmail.com',
+          primaryid: 'Passport',
+          secondaryid: 'NID'
         },
         {
           id: '1010',
@@ -282,8 +345,11 @@ export default {
           address: 'edburgh',
           postalcode: '1209',
           birthday: '12/03/1980',
+          country: 'bangladesh',
           phone: '01727772300',
-          email: 'rbm@gmail.com'
+          email: 'rbm@gmail.com',
+          primaryid: 'Passport',
+          secondaryid: 'NID'
         },
         {
           id: '1010',
@@ -293,8 +359,11 @@ export default {
           address: 'edburgh',
           postalcode: '1209',
           birthday: '12/03/1980',
+          country: 'bangladesh',
           phone: '01727772300',
-          email: 'rbm@gmail.com'
+          email: 'rbm@gmail.com',
+          primaryid: 'Passport',
+          secondaryid: 'NID'
         }
       ],
     };
@@ -311,8 +380,11 @@ export default {
         address: '',
         postalcode: '',
         birthday: '',
+        country:'',
         phone:'',
-        email: ''
+        email: '',
+        primaryid: '',
+        secondaryid: ''
       });
       this.editIndex = this.items.length - 1;
     },
