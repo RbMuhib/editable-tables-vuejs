@@ -14,8 +14,7 @@
           <th width="10%">Birthday</th>
           <th width="10%">Contact No.</th>
           <th width="10%" >Email</th>
-          <th width="10%">Description</th>
-          <th width="300%">Action</th>
+          <th width="300%">Action:Edit/Remove</th>
         </tr>
       </thead>
       <tbody>
@@ -86,9 +85,6 @@
                 v-model.number="item.email" type="email"
               />
             </span>
-          </td>
-          <td>
-            <div class="text-right">{{ subtotal(item) | money }}</div>
           </td>
           <td>
             <span v-if="editIndex !== index">
