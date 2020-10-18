@@ -157,16 +157,27 @@ class="container mt-4"
             v-if="editIndex !== index">{{ item.country }}</span
             >
             <span
+            v-if="editIndex === index">
+              <input
+              class="form-control form-control-sm"
+              v-model="item.country" 
+              />
+            </span>
+          </td>
+          <!-- <td>
+            <span
+            v-if="editIndex !== index">{{ item.country }}</span
+            >
+            <span
             v-if="editIndex === index"
             >
               <input
-              ref="country"
               class="form-control form-control-sm"
               v-model="country"
               :items="countries"
               />
             </span>
-          </td>
+          </td> -->
           <td>
             <span
             v-if="editIndex !== index">{{ item.phone }}</span
@@ -425,6 +436,6 @@ export default {
 
 <style>
 input[type="number"] {
-  text-align: right;
+  text-align: left;
 }
 </style>
